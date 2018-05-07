@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <meta charset="utf-8">
+  <title>Whatsapp web chat template - Bootdey.com</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+  <!--*********************************************LOGIN-->
+  <div class="login col-xs-10 col-sm-8">
+    <div class="login-container ">
+      <img src="assets/images/logo.png" style="max-width:150px; margin:30px 0;">
+      <div class="form-group">
+        <input type="text" class="form-control" id="nickname_input" placeholder="Nickname">
+        <br/>
+        <input type="password" class="form-control" id="password_input_login" placeholder="Password">
+      </div>
+      <button id="btn-login" class="btn btn-block btn-default">Entra</button>
+      <span id="error-login" style="color:red; "></span><br/>
+      <span style="margin-top:10px">Non sei ancora registrato?
+        <span id="btn-go-register" style="color:blue;cursor: pointer; ">Registrati</span>
+      </span>
+    </div>
+  </div>
+  <!--*********************************************REGISTER-->
+  <div class="register col-xs-10 col-sm-8" style="display:none">
+    <div class="login-container ">
+      <img src="assets/images/logo.png" style="max-width:150px; margin:30px 0;">
+      <div class="form-group">
+        <input type="text" class="form-control" id="nome_input_register" placeholder="Nome" required>
+        <br/>
+        <input type="text" class="form-control" id="nickname_input_register" placeholder="Nickname" required>
+        <br/>
+        <input type="password" class="form-control" id="password_input_register" placeholder="Password" required>
+        <br/>
+        <input type="password" class="form-control" id="confirm_password_input_register" placeholder="Conferma password" required>
+      </div>
+      <button id="btn-register" class="btn btn-block btn-default">Registrati</button>
+      <span id="error-register" style="color:red; "></span>
+      <br/>
+      <span style="margin-top:10px">Sei già registrato?
+        <span id="btn-go-login" style="color:blue;cursor: pointer; ">Vai al LOGIN</span>
+      </span>
+    </div>
+  </div>
+
+  <div class="container app" style="display:none;">
+    <div class="row app-one">
+      <div class="col-sm-4 col-xs-3 side">
+        <div class="side-one">
+          <div class="row heading">
+            <div class="col-sm-2 col-xs-2 heading-avatar">
+              <div class="heading-avatar-icon">
+                <img src="https://bootdey.com/img/Content/avatar/avatar1.png">
+              </div>
+            </div>
+            <div class="col-sm-8 col-xs-10 heading-nickname" id="nickname_user">
+              Nickname
+            </div>
+          </div>
+
+
+
+          <div class="row sideBar" id="users_list">
+
+          </div>
+        </div>
+      </div>
+
+      <!--TUTTA LA GRAFICA SULLA!-->
+      <div class="col-sm-8 col-xs-9 conversation">
+        <div class="row heading">
+          <div class="col-sm-2 col-md-1 col-xs-2 heading-avatar">
+            <div class="heading-avatar-icon">
+              <img src="assets/images/logo.png">
+            </div>
+          </div>
+          <div class="col-sm-5 col-md-9 col-xs-6 heading-name" style="text-align:center;font-size:25px" id="nome-chat">
+            
+          </div>
+          <div class="col-sm-3 col-md-2 col-xs-4 heading-name" style="text-align:right;font-size:22px;margin-right:0px;padding-right:0px" id="btn-logout">
+            Log out
+          </div>
+        </div>
+        <!--QUI SARANNO AGGIUNTE LE VARIE CONVERSAZIONI!-->
+        <div class="row message" id="conversation">
+
+        </div>
+
+        <!--MODULO PER INVIARE I MESSAGGI!-->
+        <div class="row reply">
+          <div class="col-sm-11 col-xs-11 reply-main">
+            <input type="text" class="form-control" rows="1" id="msg-input">
+          </div>
+          <div class="col-sm-1 col-xs-1 reply-send text-center">
+            <i class="fa fa-send fa-2x" id="btn-send" aria-hidden="true"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--NECESSARIO PER ELECTRON-->
+  <script>if (typeof module === 'object') { window.module = module; module = undefined; }</script>
+  <script src="assets/plugins/jquery/jquery-3.3.1.min.js"></script>
+  <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
+  <script src="assets/js/main.js"></script>
+  <!--NECESSARIO PER ELECTRON-->
+  <script>if (window.module) module = window.module;</script>
+
+</body>
+
+</html>
